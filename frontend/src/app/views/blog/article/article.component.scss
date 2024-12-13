@@ -1,0 +1,252 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.article {
+  padding-top: 80px;
+  padding-bottom: 120px;
+  @media screen and (max-width: 1261px) {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+  @media screen and (max-width: 769px) {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .container {
+    .article-link {
+      @media screen and (max-width: 1261px) {
+        margin-left: 50px;
+      }
+      color: #B9D5FD;
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+
+      span {
+        color: $blue-text-color;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+      }
+    }
+
+    .article-start {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      margin-top: 60px;
+      @media screen and (max-width: 1261px) {
+        justify-content: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+      }
+
+      .article-start-text {
+        width: 607px;
+        @media screen and (max-width: 1261px) {
+          width: 90%;
+          text-align: justify;
+        }
+
+
+        .article-title {
+          @include head-lora-38-blue;
+          line-height: 130%; /* 49.4px */
+          margin-bottom: 40px;
+          @media screen and (max-width: 1261px) {
+            text-align: center;
+            width: 100%;
+          }
+          @media screen and (max-width: 426px) {
+            font-size: 28px;
+          }
+        }
+
+        .article-description {
+          color: $blue-text-color;
+          font-family: Montserrat, sans-serif;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%; /* 26px */
+          @media screen and (max-width: 1025px) {
+            margin-bottom: 20px;
+            width: 100%;
+          }
+          @media screen and (max-width: 426px) {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .article-start-image {
+        border-radius: 5px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 527px;
+        height: 320px;
+      }
+    }
+
+    .article-content {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      @media screen and (max-width: 1261px) {
+        justify-content: center;
+
+      }
+
+
+      .article-content-text {
+        width: 818px;
+        @media screen and (max-width: 1025px) {
+          width: 90%;
+        }
+
+        .article-content-text-inner {
+          @media screen and (max-width: 1025px) {
+            text-align: justify;
+            width: 100%;
+          }
+        }
+
+        .article-question {
+          display: flex;
+          align-items: center;
+          margin-top: 61px;
+          margin-bottom: 61px;
+          @media screen and (max-width: 1025px) {
+            margin-top: 30px;
+            margin-bottom: 30px
+          }
+
+          .article-question-text {
+            color: $blue-text-color;
+            font-family: Montserrat, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 7px;
+          }
+
+          a {
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+              margin-left: 13px;
+            }
+          }
+
+        }
+
+        .article-comments {
+
+          .article-comments-title {
+            @include head-lora-38-blue;
+            margin-bottom: 20px;
+          }
+
+          .article-comments-block {
+            margin-bottom: 60px;
+
+            .article-comments-small-text {
+              margin-bottom: 40px;
+              color: $base-text-color;
+              font-family: Montserrat, sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+
+              a {
+                text-decoration: none;
+                color: $blue-text-color;
+              }
+            }
+
+            .article-comments-text-area {
+              textarea {
+                margin-bottom: 20px;
+                padding: 20px 64px 20px 20px;
+                width: 818px;
+                height: 248px;
+                box-sizing: border-box;
+                border-radius: 3px;
+                outline: none;
+                border: 2px solid $blue-text-color;
+                background: #FFF;
+
+                &::placeholder {
+                  color: #A8ABA7;
+                  font-family: Montserrat, sans-serif;
+                  font-size: 14px;
+                  font-weight: 400;
+                }
+              }
+
+              .article-comments-action {
+                button.button {
+                  width: 422px;
+                  padding: 15px 40px;
+                }
+              }
+            }
+          }
+
+          .article-comments-list {
+            display: flex;
+            flex-direction: column;
+            row-gap: 40px;
+            @media screen and (max-width: 1025px) {
+              margin-bottom: 10px;
+              row-gap: 30px;
+            }
+          }
+
+          .next-comments {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .next-comments-text {
+              color: $blue-text-color;
+              font-family: Montserrat, sans-serif;
+              font-size: 20px;
+              font-weight: 500;
+              margin-right: 10px;
+            }
+
+            .next-comments-svg {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+
+      }
+
+      .article-content-related-articles {
+        margin-top: 60px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
+        @media screen and (max-width: 1025px) {
+          flex-direction: row;
+          margin-top: 30px;
+          gap: 20px;
+        }
+
+
+      }
+    }
+
+
+  }
+
+}

@@ -1,0 +1,184 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/global";
+
+footer.footer {
+  padding-top: 40px;
+  padding-bottom: 54px;
+  background-color: #B9D5FD;
+
+  .container {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: $base-text-color;
+    @media screen and (max-width: 1280px) {
+      padding: 0 15px;
+    }
+
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      @media screen and (max-width: 1035px) {
+        justify-content: center;
+        column-gap: 20px;
+      }
+
+
+      a.logo {
+        margin-right: 40px;
+        @media screen and (max-width: 600px) {
+          margin-right: 0;
+        }
+      }
+
+      .footer-menu {
+        nav ul {
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          @media screen and (max-width: 510px) {
+            gap: 15px;
+            justify-content: center;
+
+          }
+
+          li {
+            list-style: none;
+
+            &.active {
+              color: $blue-text-color;
+            }
+
+            a {
+              color: $base-text-color;
+
+              font-style: normal;
+              cursor: pointer;
+              text-decoration: none;
+
+              &:hover {
+                color: #3f3fdc;
+              }
+            }
+
+          }
+        }
+      }
+    }
+
+    .footer-contacts {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 60px;
+      @media screen and (max-width: 1035px) {
+        justify-content: center;
+        column-gap: 20px;
+        row-gap: 15px;
+      }
+
+      .contacts-title {
+        color: $blue-text-color;
+        margin-bottom: 10px;
+      }
+
+      .footer-contacts-address {
+        width: 253px;
+        @media screen and (max-width: 426px) {
+          width: 300px;
+        }
+      }
+
+      .footer-contacts-phone {
+        width: 153px;
+        @media screen and (max-width: 340px) {
+          width: 130px;
+        }
+
+        .footer-contacts-phone-description {
+          display: inline-block;
+          text-decoration: none;
+          font-size: 16px;
+          cursor: pointer;
+          color: $base-text-color;
+          @media screen and (max-width: 340px) {
+            font-size: 14px;
+          }
+
+        }
+
+        .footer-contacts-phone-action {
+          margin-top: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .footer-button {
+            display: inline-block;
+            height: 36px;
+            text-decoration: none;
+            padding: 10px 20px;
+            width: 153px;
+            font-size: 12px;
+            font-weight: 500;
+            @media screen and (max-width: 340px) {
+              font-size: 11px;
+              padding: 11px 5px;
+            }
+          }
+        }
+      }
+
+      .footer-contacts-email {
+        width: 127px;
+
+        .footer-contacts-email-description {
+          font-size: 14px;
+          color: $base-text-color;
+          display: inline-block;
+          text-decoration: none;
+          cursor: pointer;
+
+        }
+      }
+
+      .footer-contacts-social {
+        .footer-contacts-social-list {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          @media screen and (max-width: 426px) {
+            justify-content: center;
+            font-size: 11px;
+            padding: 11px 5px;
+          }
+
+          a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .footer-right {
+      margin-top: 6px;
+      color: $blue-text-color;
+      font-size: 16px;
+      font-style: normal;
+      @media screen and (max-width: 1035px) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+

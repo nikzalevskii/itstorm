@@ -1,0 +1,84 @@
+@import "../../../../assets/styles/variables";
+
+.article-card {
+  position: relative;
+  box-sizing: border-box;
+  width: 290px;
+  height: 570px;
+  max-height: 570px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  .article-card-type {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $blue-text-color;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    padding: 10px 18px;
+    border-radius: 5px;
+    background: #FFF;
+    z-index: 2;
+  }
+
+  .article-card-img {
+    width: 290px;
+    height: 290px;
+    min-height: 290px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-position: center;
+    background-size: cover;
+
+  }
+
+  .article-card-title {
+    color: $blue-text-color;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    box-sizing: border-box;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 130%; /* 26px */
+    //height: 110px;
+    overflow: hidden; // Скрыть переполнение
+    text-overflow: ellipsis; // Многоточие в случае переполнения
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // Ограничиваем количество строк
+    -webkit-box-orient: vertical;
+
+  }
+
+  .article-card-description {
+    color: $base-text-color;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    text-overflow: ellipsis; // Многоточие в случае переполнения
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 8; // Ограничиваем количество строк (например, 3 строки)
+    //-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+    //mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+
+  }
+
+  .article-card-details {
+    margin-top: auto;
+
+    a {
+      color: $blue-text-color;
+      font-family: Montserrat, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      text-decoration: underline;
+    }
+  }
+
+}

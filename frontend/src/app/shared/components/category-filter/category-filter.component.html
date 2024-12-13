@@ -1,0 +1,27 @@
+<div class="articles-sorting" [class.open]="filterOpen">
+  <div class="articles-sorting-head" (click)="toggleSorting()">
+    <span class="articles-sorting-head-name">Фильтр</span>
+    <span class="articles-sorting-head-count" *ngIf="!filterOpen && activeParams.categories.length > 0">
+      {{activeParams.categories.length}}
+    </span>
+    <svg *ngIf="!filterOpen" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M10 14.5C9.41668 14.5 8.83335 14.275 8.39168 13.8334L2.95835 8.40003C2.71668 8.15837 2.71668 7.75837 2.95835 7.5167C3.20002 7.27503 3.60002 7.27503 3.84168 7.5167L9.27502 12.95C9.67502 13.35 10.325 13.35 10.725 12.95L16.1583 7.5167C16.4 7.27503 16.8 7.27503 17.0417 7.5167C17.2833 7.75837 17.2833 8.15837 17.0417 8.40003L11.6083 13.8334C11.1667 14.275 10.5833 14.5 10 14.5Z"
+        fill="#071739"/>
+    </svg>
+    <svg *ngIf="filterOpen" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path
+        d="M9.99998 5.99997C10.5833 5.99997 11.1667 6.22497 11.6083 6.66663L17.0417 12.1C17.2833 12.3416 17.2833 12.7416 17.0417 12.9833C16.8 13.225 16.4 13.225 16.1583 12.9833L10.725 7.54997C10.325 7.14997 9.67498 7.14997 9.27498 7.54997L3.84165 12.9833C3.59999 13.225 3.19998 13.225 2.95832 12.9833C2.71665 12.7416 2.71665 12.3416 2.95832 12.1L8.39165 6.66663C8.83332 6.22497 9.41665 5.99997 9.99998 5.99997Z"
+        fill="#071739"/>
+    </svg>
+  </div>
+  <div class="articles-sorting-body">
+    <div class="articles-sorting-item" *ngFor="let category of categories; let i = index"
+         [class.active]="activeParams.categories.includes(category.url)"
+         (click)="updateFilterParam(i, category.url)">
+      <div class="articles-sorting-item-name">{{category.name}}</div>
+      <div *ngIf="!activeParams.categories.includes(category.url)" class="articles-sorting-item-sign">+</div>
+      <div *ngIf="activeParams.categories.includes(category.url)" class="articles-sorting-item-sign">-</div>
+    </div>
+  </div>
+</div>

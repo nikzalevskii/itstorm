@@ -1,0 +1,100 @@
+@import "../../../../assets/styles/variables";
+
+header.header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    @media screen and (max-width: 1280px) {
+      padding: 0 15px;
+    }
+
+    @media screen and (max-width: 1035px) {
+      justify-content: center;
+      column-gap: 20px;
+    }
+
+    .header-menu {
+      nav ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        @media screen and (max-width: 510px) {
+          gap: 15px;
+          justify-content: center;
+
+        }
+
+        li {
+          list-style: none;
+
+
+          a {
+            color: $base-text-color;
+            font-size: 16px;
+            font-style: normal;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+              color: $blue-text-color;
+            }
+
+            &.active {
+              color: $blue-text-color;
+            }
+          }
+
+        }
+      }
+    }
+
+    .header-phone {
+      margin-left: 257px;
+      margin-right: 0;
+
+      a {
+        text-decoration: none;
+        color: $blue-text-color;
+        font-size: 16px;
+        font-style: normal;
+
+      }
+      @media screen and (max-width: 1035px) {
+        margin-left: 0;
+      }
+    }
+
+    .header-user {
+      display: flex;
+      align-items: center;
+
+      .header-user-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header-user-text {
+        color: $base-text-color;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        margin-left: 7px;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,28 @@
+.terms {
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: justify;
+  @media screen and (max-width: 769px){
+    font-size: 15px;
+  }
+  @media screen and (max-width: 426px){
+    font-size: 14px;
+  }
+  @media screen and (max-width: 376px){
+    font-size: 12px;
+  }
+  div {
+    margin-bottom: 10px;
+  }
+  .agree-personal-data {
+    div {
+      margin-bottom: 10px;
+    }
+  }
+  .relationships {
+    div {
+      margin-bottom: 10px;
+    }
+  }
+}

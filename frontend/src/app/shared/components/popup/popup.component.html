@@ -1,0 +1,89 @@
+<div class="modal-consult">
+  <div class="modal-block">
+    <div class="modal-block-exit" (click)="closeDialog()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0.935622" y1="0.649902" x2="12.9564" y2="12.6707" stroke="#BEBEBE" stroke-linecap="round"/>
+        <line x1="12.9236" y1="0.629714" x2="0.902769" y2="12.6505" stroke="#BEBEBE" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- Тип "Консультация" -->
+    <div *ngIf="data.type === 'consult'">
+      <div class="modal-block-text modal-block-text-consult">
+        Закажите бесплатную консультацию!
+      </div>
+      <form [formGroup]="consultForm" (ngSubmit)="submitConsultForm()">
+        <div class="modal-block-input">
+          <input class="modal-block-input-name" type="text"
+                 [ngStyle]="{'border-color': consultForm.get('nameForConsult')?.invalid &&
+               (consultForm.get('nameForConsult')?.dirty || consultForm.get('nameForConsult')?.touched) ? 'red' : ''}"
+                 placeholder="Ваше имя" formControlName="nameForConsult">
+          <div class="error-message" *ngIf="consultForm.get('nameForConsult')?.invalid
+                 && (consultForm.get('nameForConsult')?.dirty || consultForm.get('nameForConsult')?.touched)">
+            Некорректно введено имя
+          </div>
+        </div>
+        <div class="modal-block-input">
+          <input class="modal-block-input-phone" type="text"
+                 [ngStyle]="{'border-color': consultForm.get('phoneForConsult')?.invalid &&
+               (consultForm.get('phoneForConsult')?.dirty || consultForm.get('phoneForConsult')?.touched) ? 'red' : ''}"
+                 placeholder="Телефон: 8 (888) 888-88-88" formControlName="phoneForConsult"
+                 mask="0 (000) 000-00-00">
+          <div class="error-message" *ngIf="consultForm.get('phoneForConsult')?.invalid
+                 && (consultForm.get('phoneForConsult')?.dirty || consultForm.get('phoneForConsult')?.touched)">
+            Некорректно введен номер телефона
+          </div>
+        </div>
+        <button class="button" type="submit" [disabled]="consultForm.invalid">Заказать консультацию</button>
+      </form>
+    </div>
+
+    <!-- Тип "Ответ на заявку" -->
+    <div *ngIf="data.type === 'response'">
+      <div class="modal-block-text">
+        Спасибо за вашу заявку!
+      </div>
+      <p>Мы свяжемся с вами при первой же возможности.</p>
+      <button class="button button-modal-response" (click)="closeDialog()">Окей</button>
+    </div>
+
+    <!-- Тип "Заявка на услугу" -->
+    <div *ngIf="data.type === 'service'">
+      <div class="modal-block-text">
+        Заявка на услугу
+      </div>
+      <form [formGroup]="serviceForm" (ngSubmit)="submitServiceForm()">
+        <select class="modal-block-select" formControlName="selectedService">
+          <option value="createSite">Создание сайтов</option>
+          <option value="promotion">Продвижение</option>
+          <option value="advertise">Реклама</option>
+          <option value="copywriting">Копирайтинг</option>
+        </select>
+        <div class="modal-block-input">
+          <input class="modal-block-input-name" type="text"
+                 [ngStyle]="{'border-color': serviceForm.get('nameForOrder')?.invalid &&
+               (serviceForm.get('nameForOrder')?.dirty || serviceForm.get('nameForOrder')?.touched) ? 'red' : ''}"
+                 placeholder="Ваше имя" formControlName="nameForOrder">
+          <div class="error-message" *ngIf="serviceForm.get('nameForOrder')?.invalid
+                 && (serviceForm.get('nameForOrder')?.dirty || serviceForm.get('nameForOrder')?.touched)">
+            Некорректно введено имя
+          </div>
+        </div>
+        <div class="modal-block-input">
+          <input class="modal-block-input-phone" type="text"
+                 [ngStyle]="{'border-color': serviceForm.get('phoneForOrder')?.invalid &&
+               (serviceForm.get('phoneForOrder')?.dirty || serviceForm.get('phoneForOrder')?.touched) ? 'red' : ''}"
+                 placeholder="Телефон: 8 (888) 888-88-88" formControlName="phoneForOrder"
+                 mask="0 (000) 000-00-00">
+          <div class="error-message" *ngIf="serviceForm.get('phoneForOrder')?.invalid
+                 && (serviceForm.get('phoneForOrder')?.dirty || serviceForm.get('phoneForOrder')?.touched)">
+            Некорректно введен номер телефона
+          </div>
+        </div>
+
+
+        <button class="button" type="submit" [disabled]="serviceForm.invalid">Оставить заявку</button>
+      </form>
+    </div>
+  </div>
+</div>

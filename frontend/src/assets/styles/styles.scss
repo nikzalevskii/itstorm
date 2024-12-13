@@ -1,0 +1,310 @@
+@import "variables";
+@import "fonts";
+@import "mixins";
+@import "global";
+@import "adaptive";
+
+
+//html, body { height: 100%; }
+html {
+  scroll-behavior: smooth;
+}
+
+
+//swiper
+.swiper-container {
+  .swiper-pagination-bullet {
+    background-color: transparent;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    opacity: 1;
+
+    &.swiper-pagination-bullet-active {
+      background-color: white;
+      opacity: 1;
+    }
+  }
+}
+
+
+//Article. InnerHtml
+.article-content-text {
+
+  h3 {
+    color: $blue-text-color;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: #071739;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+  }
+}
+
+.modal-consult {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  //height: 100vh;
+  background-color: rgba(0, 0, 0, 0.39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+
+  .modal-block {
+    position: absolute;
+    width: 727px;
+    height: 489px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 94px 152px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid #709FDC;
+    @media screen and (max-width: 1025px) {
+      width: 450px;
+      height: 400px;
+      padding: 45px 80px;
+    }
+    @media screen and (max-width: 426px) {
+      width: 300px;
+      height: 280px;
+      padding: 25px 40px;
+    }
+    @media screen and (max-width: 374px) {
+      width: 230px;
+      height: 250px;
+      padding: 15px 25px;
+    }
+
+    .modal-block-exit {
+      position: absolute;
+      top: 32px;
+      right: 31px;
+      cursor: pointer;
+      @media screen and (max-width: 426px) {
+        top: 12px;
+        right: 11px;
+      }
+      @media screen and (max-width: 374px) {
+        top: 10px;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .modal-block-text {
+        @include head-lora-38-blue;
+        line-height: 130%;
+        text-align: center;
+        margin-bottom: 20px;
+        @media screen and (max-width: 1025px) {
+          font-size: 30px;
+          margin-bottom: 10px;
+        }
+        @media screen and (max-width: 426px) {
+          font-size: 26px;
+        }
+        @media screen and (max-width: 374px) {
+          font-size: 18px;
+        }
+
+        &.modal-block-text-response {
+          width: 443px;
+        }
+      }
+      .modal-block-text-consult {
+        @media screen and (max-width: 769px) {
+          font-size: 26px;
+        }
+        @media screen and (max-width: 426px) {
+          font-size: 22px;
+        }
+        @media screen and (max-width: 374px) {
+          font-size: 16px;
+        }
+      }
+
+      form {
+
+        .modal-block-select {
+          width: 422px;
+          padding: 20px;
+          outline: none;
+          font-family: Montserrat, sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          box-sizing: border-box;
+          margin-bottom: 5px;
+          border-radius: 3px;
+          border: 2px solid $blue-text-color;
+          background: #FFF;
+          cursor: pointer;
+          color: $blue-text-color;
+          -webkit-appearance: none; /* Для браузеров на базе WebKit */
+          -moz-appearance: none; /* Для Firefox */
+          appearance: none; /* Современный стандарт */
+          background: none; /* Убирает фоновую иконку */
+          @media screen and (max-width: 1025px) {
+            max-width: 300px;
+          }
+          @media screen and (max-width: 426px) {
+            max-width: 250px;
+            padding: 10px;
+          }
+          @media screen and (max-width: 374px) {
+            max-width: 200px;
+            padding: 8px;
+            font-size: 11px;
+          }
+        }
+
+        .modal-block-input {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          .modal-block-input-name, .modal-block-input-phone {
+            width: 422px;
+            padding: 20px;
+            outline: none;
+            color: $base-text-color;
+            font-family: Montserrat, sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            border: 2px solid $blue-text-color;
+
+            background: #FFF;
+
+            &::placeholder {
+              color: #A8ABA7;
+              @media screen and (max-width: 374px) {
+                font-size: 11px;
+              }
+            }
+            @media screen and (max-width: 1025px) {
+              max-width: 300px;
+              max-height: 250px;
+            }
+            @media screen and (max-width: 426px) {
+              max-width: 250px;
+              padding: 10px
+            }
+            @media screen and (max-width: 374px) {
+              max-width: 200px;
+              padding: 8px;
+            }
+          }
+
+          .error-message {
+            position: absolute;
+            bottom: 10px;
+            left: 15px;
+            font-size: 10px;
+            color: red;
+            pointer-events: none;
+            @media screen and (max-width: 426px) {
+              font-size: 9px;
+              bottom: 8px;
+              left: 11px;
+            }
+            @media screen and (max-width: 426px) {
+              font-size: 8px;
+              bottom: 7px;
+              left: 10px;
+            }
+          }
+        }
+
+        button.button {
+          width: 422px;
+          padding: 15px 40px;
+          margin-top: 15px;
+          @media screen and (max-width: 1025px) {
+            max-width: 300px;
+            max-height: 250px;
+          }
+          @media screen and (max-width: 426px) {
+            margin-top: 10px;
+            max-width: 250px;
+            padding: 10px;
+          }
+          @media screen and (max-width: 374px) {
+            max-width: 200px;
+            padding: 8px;
+            font-size: 11px;
+          }
+        }
+
+
+      }
+
+
+      p {
+        color: #1E1A2B;
+        text-align: center;
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        margin-bottom: 40px;
+
+      }
+
+      .button-modal-response {
+        padding: 10px 20px;
+        border-radius: 5px;
+        width: 73px;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0;
+      }
+
+
+    }
+
+  }
+}
+
+.mat-dialog-container {
+  padding: 0!important;
+  @media screen and (max-width: 1025px) {
+    margin: 0 auto;
+    width: 450px!important;
+    height: 400px!important;
+  }
+  @media screen and (max-width: 426px) {
+    width: 300px!important;
+    height: 280px!important;
+  }
+  @media screen and (max-width: 374px) {
+    width: 230px!important;
+    height: 250px!important;
+  }
+}

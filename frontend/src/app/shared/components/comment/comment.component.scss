@@ -1,0 +1,77 @@
+@import "../../../../assets/styles/variables";
+
+.comment {
+  width: 854px;
+  @media screen and (max-width: 1025px) {
+    width: 100%;
+  }
+  .comment-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .comment-info-pic {
+      width: 60px;
+      height: 60px;
+      box-sizing: border-box;
+      border-radius: 50%;
+      border: 2px solid $blue-text-color;
+      background-color: #B9D5FD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .comment-info-person {
+      margin-left: 26px;
+      .comment-info-person-name {
+        color: $blue-text-color;
+        font-family: Montserrat, sans-serif;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .comment-info-person-date {
+        color: #BEBEBE;
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+  .comment-text {
+    color: $base-text-color;
+    font-family: Montserrat,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+    margin-bottom: 39px;
+    @media screen and (max-width: 1025px) {
+      margin-bottom: 10px;
+    }
+  }
+  .comment-actions {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    .comment-actions-like, .comment-actions-dislike, .comment-actions-spam {
+      display: flex;
+      align-items: center;
+      .comment-actions-like-count, .comment-actions-dislike-count,  {
+        //color: $blue-text-color;
+        color: $base-text-color;
+        font-family: Montserrat,sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 3px;
+        &.active {
+          color: $blue-text-color;
+        }
+      }
+      a {
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
